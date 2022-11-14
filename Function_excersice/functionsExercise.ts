@@ -8,6 +8,10 @@
 // twoFer() => "One for you, one for me"
 // twoFer("Elton") => "One for Elton, one for me"
 
+function twoFer(name: string = 'you'): string {
+    return `One for ${name}, one for me`
+}
+
 // **********************************************
 // ******************* PART 2 *******************
 // **********************************************
@@ -21,3 +25,7 @@
 // OR...
 // - year is a multiple of 400
 // hint - use modulo
+
+function isLeapyear(year: number): boolean {
+    return (year % 4 === 0 && year % 100 != 0) || year % 400 === 0
+}
