@@ -1,4 +1,6 @@
 const path = require('path');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
 
 module.exports = {
     // Entry file where we need to start bundling
@@ -24,8 +26,11 @@ module.exports = {
         extensions: [".tsx", ".ts", ".js"]
     },
     output: {
-        filename: "bundle.js",
+        filename: "[contenthash].bundle.js",
         path: path.resolve(__dirname, "dist"),
         publicPath: "/dist"
-    }
+    },
+    plugins: [
+        new CleanWebpackPlugin()
+    ]
 }
